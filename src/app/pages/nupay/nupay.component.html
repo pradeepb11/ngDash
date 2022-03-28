@@ -1,0 +1,17 @@
+<div class="">
+    <form (submit)="filterById()">
+        <label>
+          Min
+          <input type="date" name="min" id="min" [(ngModel)]="min" />
+        </label>
+        <label>
+          Max
+          <input type="date" name="max" id="max" [(ngModel)]="max" />
+        </label>
+        <button class="btn btn-primary" type="submit">Filter by ID</button>
+      </form>
+      <br />
+      <div class="table-responsive">
+      <table datatable [dtOptions]="dtOptions" class="table table-stripes table-bordered table-sm"></table>
+    </div>
+</div>

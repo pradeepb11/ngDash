@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+
+
+    <div class=" container-fluid p-0">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Invoices</h3>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table shadow border ">
+                    <div class="card-header border-bottom border-2">
+
+                        <h5 class="card-title mb-0 float-start">Invoices Lists</h5>
+                        <div class="col-auto float-end">
+                            <a routerLink="./add" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> New
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="card-body p-0 mt-3 mb-3">
+                        <div class="table-responsive p-2">
+                            <table datatable [dtOptions]="dtOptions" class="table table-stripped table-hover datatable dataTable ">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Invoice ID</th>
+                                        <th>Ref. No</th>
+                                        <th>To</th>
+                                        <th>Currency</th>
+                                        <th>Amount</th>
+                                        <th>Email</th>
+                                        <th>Data & Time</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let list of listOfInvoice">
+                                        <td>
+                                            <a routerLink="./view/{{list.id}}">{{list.invoiceId}}</a>
+                                        </td>
+                                        <td>{{list.refNo}}</td>
+                                        <td>{{list.to}}</td>
+                                        <td>{{list.currency }}</td>
+                                        <td class="text-end fw-bold">{{list.amount | number :'1.2-2'}}</td>
+                                        <td>{{list.email}}</td>
+                                        <td>{{list.create_at}}</td>
+                                        <td>
+                                            <span class="badge " [ngClass]="[list.status === 'paid'? 'bg-success':'', list.status === 'partially paid'?  'bg-warning':'', list.status === 'overdue'?  'bg-danger':'']">{{list.status | titlecase}}</span>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item bg-success text-white" (click)="goToUrl()" [ngClass]="[list.status=== 'paid'? 'd-none':'d-block']">
+                                                    <i class="fas fa-money-bill-wave fa-fw me-2 "></i> Pay Now
+                                                </a>
+
+                                                <a class="dropdown-item " [ngClass]="[list.status==='paid' ? 'd-none': 'd-block'] " routerLink="./edit/{{list.id}}"><i class="far fa-edit me-2 "></i>Edit</a>
+                                                <a class="dropdown-item " routerLink="./view/{{list.id}}"><i class="far fa-eye me-2 "></i>View</a>
+                                                <a class="dropdown-item "><i class="far fa-trash-alt me-2 "></i>Delete</a>
+                                                <!-- <a class="dropdown-item " href="javascript:void(0); "><i class="far fa-check-circle me-2 "></i>Mark as sent</a>-->
+                                                <!-- <a class="dropdown-item " href="javascript:void(0); "><i class="far fa-paper-plane me-2 "></i>Send Invoice</a> -->
+
+                                            </div>
+                                            <!-- <button class="btn btn-success me-2 ">Pay Now</button>
+                                            <button class="btn btn-info me-2 ">View</button>
+                                            <button class="btn btn-warning me-2 ">Edit</button>
+                                            <button class="btn btn-danger me-2 ">Cancel</button> -->
+                                        </td>
+                                    </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="loader" *ngIf="loader"> </div>
+<div class="swal2-container" *ngIf="overlay"></div>
