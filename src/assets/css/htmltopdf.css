@@ -1,0 +1,134 @@
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.row {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-top: calc(var(--bs-gutter-y) * -1);
+}
+
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.invoice-info {
+    margin-bottom: 30px;
+}
+
+.invoice-item .invoice-logo {
+    margin-bottom: 30px;
+}
+
+.invoice-item .invoice-logo img {
+    width: auto;
+    max-height: 52px;
+}
+
+.invoice-item .invoice-details {
+    text-align: right;
+    font-weight: 500;
+}
+
+.invoice-item .invoice-details strong {
+    color: #272b41;
+}
+
+.invoice-item .invoice-details strong {
+    color: #272b41;
+}
+
+.invoice-item .customer-text {
+    font-size: 18px;
+    color: #272b41;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.invoice-item .invoice-details-two {
+    text-align: left;
+}
+
+.invoice-info.invoice-info2 {
+    text-align: right;
+}
+
+.invoice-info {
+    margin-bottom: 30px;
+}
+
+.col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.col-xl-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.ms-auto {
+    margin-left: auto !important;
+}
+
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+}
+
+.invoice-table-two {
+    margin-bottom: 0;
+}
+
+.table {
+    border-color: #dee2e6;
+    color: #495057;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    width: 100%;
+}
+
+.table tbody,
+.table td,
+.table tfoot,
+.table th,
+.table thead,
+.table tr,
+.table> :not(:last-child)> :last-child>* {
+    border-top: 6px solid #e6eeff;
+}
+
+.table tbody,
+.table td,
+.table tfoot,
+.table th,
+.table thead,
+.table tr,
+.table> :not(:last-child)> :last-child>* {
+    border-color: #dee2e6;
+}
+
+.table>tbody {
+    vertical-align: inherit;
+}
+
+.invoice-table tr th,
+.invoice-table tr td,
+.invoice-table-two tr th,
+.invoice-table-two tr td {
+    color: #272b41;
+    font-weight: 600;
+    padding: 10px 20px;
+    line-height: inherit;
+}
+
+.invoiceText-header {
+    text-transform: uppercase;
+}

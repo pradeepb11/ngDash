@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', redirectTo:"dashboard", pathMatch:'full'
+    path: '', redirectTo:"auth", pathMatch:'full'
   },
-  { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'roles', loadChildren: () => import('./pages/roles/roles.module').then(m => m.RolesModule) },
-  { path: 'invoice', loadChildren: () => import('./pages/invoice/invoice.module').then(m => m.InvoiceModule) },
-  {path:'pagenotfound', loadChildren: () => import('./pages/pagenotfound/pagenotfound.module').then(m => m.PagenotfoundModule)},
-  { path: 'payout', loadChildren: () => import('./pages/payout/payout.module').then(m => m.PayoutModule) },
-  { path: 'nupay', loadChildren: () => import('./pages/nupay/nupay.module').then(m => m.NupayModule) },
+  
+  
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'invoice', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule), data:{ title: ' Invoice'} },
+ 
   { path: '**', pathMatch:'full', loadChildren: () => import('./pages/pagenotfound/pagenotfound.module').then(m => m.PagenotfoundModule) }
   ];
 

@@ -11,6 +11,8 @@ import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
 import { PaynowComponent } from './paynow/paynow.component';
 import { PaysuccesfullyComponent } from './paysuccesfully/paysuccesfully.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {NgxPrintModule} from 'ngx-print';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
     InvoiceRoutingModule,
     DataTablesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPrintModule
   ]
 })
 export class InvoiceModule {

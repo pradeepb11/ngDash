@@ -1,39 +1,41 @@
 <div class="container-fluid">
 
-
+    <button class="btn btn-primary" printSectionId="pdfTable" styleSheetFile="./assets/css/htmltopdf.css" printSectionId="pdfTable" ngxPrint>Export To PDF</button>
     <div class="content container-fluid p-0">
         <div class="row justify-content-center">
-            <div class="col-xl-8">
-                <div class="card">
-                    <div class="card-body shadow">
+            <div class="col-xl-12">
+                <div class="card" id="pdfTable" #pdfTable>
+                    <div class="card-body  shadow">
                         <div class="invoice-item">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="invoice-logo">
-                                        <img src="./assets//images/paynet.png" style="width: 160px;" alt="logo">
+                                        <img src="./assets//images/paynet.png" style="width: 250px;" alt="logo">
                                     </div>
-                                </div>
+                                    ` </div>
                                 <div class="col-md-6">
-                                    <p class="invoice-details">
+                                    <!-- <p class="invoice-details">
                                         <strong>Order:</strong> #00124 <br>
                                         <strong>Issued:</strong> 14/03/2022
-                                    </p>
+                                    </p> -->
                                 </div>
                             </div>
                         </div>
                         <div class="invoice-item">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="invoice-info">
+                                    <!-- <div class="invoice-info">
                                         <strong class="customer-text">Invoice From</strong>
                                         <p class="invoice-details invoice-details-two"> Lorem, ipsum. <br> 806 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, libero.`
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="invoice-info invoice-info2">
-                                        <strong class="customer-text">Invoice To</strong>
-                                        <p class="invoice-details"> Lorem, ipsum. <br> 299 Lorem ipsum dolor sit amet.
+                                        <h1 class="text-uppercase fw-bold fs-2 invoiceText-header">Invoice</h1>
+                                        <!-- <strong class="customer-text text-uppercase fs-1">Invoice To</strong> -->
+                                        <p class="invoice-details">
+                                            Invoice# : INV-PGMER-202203014 <br> Date : 26-05-2022 <br> GSTIN: 27AAGCC4545D2Z
                                         </p>
                                     </div>
                                 </div>
@@ -42,9 +44,13 @@
                         <div class="invoice-item">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="invoice-info">
-                                        <strong class="customer-text">Payment Method</strong>
-                                        <p class="invoice-details invoice-details-two"> Debit Card <br> XXXXXXXXXXXX-2541 <br> HDFC Bank <br>
+                                    <div class="invoice-info ">
+                                        <strong class="customer-text">To: Rokash Tech Private Limited</strong>
+                                        <p class="invoice-details invoice-details-two fw-bold" style="width: 250px; word-wrap: break-word;">
+                                            No 4C - 432 HRBR, L/O 2ND BLOCK,Bangalore, Bangalore, Karnataka,India, 560043
+                                        </p>
+                                        <p style="width: 250px; word-wrap: break-word;" class="fw-bold">
+                                            Attn: Email: nicolascage6767@gmail.com
                                         </p>
                                     </div>
                                 </div>

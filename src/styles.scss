@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 /* You can add global styles to this file, and also import other style files */
 
 #invocieSection {
@@ -113,24 +115,33 @@ bg-warning {
     }
 }
 
-.table{
-    thead{
-        tr{
-      
-            th{
+.table {
+    thead {
+        tr {
+            th {
                 border-right: 1px solid #f1f1f1;
                 // font-size: 12px;
                 white-space: nowrap;
             }
         }
     }
-    tbody{
-        tr{
-            td{
+    tbody {
+        tr {
+            td {
                 // white-space: nowrap;
             }
         }
     }
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border-color: red
+}
+
+.invalid-feedback {
+    display: block;
 }
 
 @import "ag-grid-community/dist/styles/ag-grid.css";

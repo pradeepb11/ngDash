@@ -1,0 +1,181 @@
+<!-- <div class="container">
+    <div class="brand_company">
+        <img src="./assets/images/Paynet_Logo_Full.svg" style="width: 150px;" alt="">
+    </div>
+</div> -->
+
+<div id="loginCon">
+    <div class="container ">
+        <div class="row">
+            <div class="login_box">
+                <div class="login_container">
+
+                    <div class="wrap_login card p-4 dark-shadow border rounded ">
+                        <div class="header-text text-center mb-3">
+                            <img src="./assets/images/Paynet_Logo_Full.svg" style="width: 150px;" alt="">
+                            <p class="text-muted mt-0">Enter Your details for account</p>
+                        </div>
+
+                        <form [formGroup]="basicInfoRegForm" (ngSubmit)="onbasicInfoRegistrationForm()" class="">
+                            <!-- username  -->
+                            <div class="form-outline mb-2">
+                                <div class="form-group">
+                                    <!-- <label class="form-label" for="first_name">Enter Your Full Name <span class="text-danger">*</span></label> -->
+                                    <input type="text" class="form-control" formControlName="username" autocomplete="off" id="first_name" [ngClass]="{
+                      'is-invalid': submitted && f['username'].errors && f['username'].touched,
+                      'is-valid': f['username'].touched && f['username'].valid 
+                      }" placeholder="Enter Your Username">
+                                    <div *ngIf="f['username'].touched && f['username'].invalid" class="invalid-feedback">
+                                        <div *ngIf="f['username'].errors?.['required']">
+                                            Please Enter Your username!
+                                        </div>
+                                        <div *ngIf="f['username'].errors?.['pattern']">
+                                            Please, Do Not Use Special Characters.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- / username  -->
+
+
+
+
+
+
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-2 posrelative">
+
+                                <div class="form-group">
+                                    <!-- <label for="username">Enter Your Email Id <span class="text-danger">*</span></label> -->
+                                    <input type="email" class="form-control" formControlName="email" autocomplete="off" id="username" [ngClass]="{
+                      'is-invalid': submitted && f['email'].errors && f['email'].touched,
+                      'is-valid': f['email'].touched && f['email'].valid 
+                      }" placeholder="Enter your Email">
+                                    <div *ngIf="f['email'].touched && f['email'].invalid" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors?.['required']">
+                                            Please Enter Your email!
+                                        </div>
+                                        <div *ngIf="f['email'].errors?.['pattern']">
+                                            Email is invalid !
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- / Password input -->
+
+
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-2 posrelative">
+
+                                <div class="form-group">
+                                    <!-- <div class="d-block mb-1">
+                                      <label for="password" class="control-label ">Password <span class="text-danger">*</span></label>
+
+                                  </div> -->
+                                    <div class="form-outline mb-2 posrelative">
+                                        <input [type]="show_button ? 'text' : 'password'" formControlName="password" class="form-control" autocomplete="off" id="password" [ngClass]="{
+                          'is-invalid': submitted && f['password'].errors && f['password'].touched,
+                          'is-valid': f['password'].touched && f['password'].valid 
+                          }" placeholder="Password">
+                                        <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                        <div *ngIf="f['password'].touched && f['password'].invalid" class="invalid-feedback">
+                                            <div *ngIf="f['password'].errors?.['required']">
+                                                Please Enter Your password!
+                                            </div>
+
+                                        </div>
+                                        <strength-meter [value]="basicInfoRegForm.value.password" (measure)="onStrengthChange($event)"></strength-meter>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <!-- / Password input -->
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-2 posrelative">
+
+                                <div class="form-group">
+                                    <!-- <div class="d-block mb-1">
+                                      <label for="password" class="control-label ">Confirm Password <span class="text-danger">*</span></label>
+
+                                  </div> -->
+                                    <div class="posrelative">
+                                        <input [type]="show_button_confirm ? 'text' : 'password'" formControlName="confirm_password" class="form-control" autocomplete="off" id="password" [ngClass]="{
+                          'is-invalid': submitted && f['confirm_password'].errors && f['confirm_password'].touched,
+                          'is-valid': f['confirm_password'].touched && f['confirm_password'].valid 
+                          }" placeholder="Confirm Password">
+                                        <i class="posabso iconsright" [class]="show_eye_confirm ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPasswordConfirm()"></i>
+                                        <div *ngIf="f['confirm_password'].touched && f['confirm_password'].invalid" class="invalid-feedback">
+                                            <div *ngIf="f['confirm_password'].errors?.['required']">
+                                                Please Enter Your Confirm Password!
+                                            </div>
+                                            <div *ngIf="f['confirm_password'].errors?.['confirmedValidator']">Password and Confirm Password must be match.
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <!-- / Password input -->
+
+                            <!-- Submit button -->
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" [disabled]="!basicInfoRegForm.valid">
+                                  <span class="button__text ">Register Now</span>
+                                  <!-- <i class="button__icon fas fa-chevron-right"></i> -->
+                                </button>
+
+
+                            </div>
+
+
+                            <div class=" d-flex align-items-center my-3">
+                                <!-- <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p> -->
+                            </div>
+
+                            <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                              <a href="#!" class="text-dark"><i class="fab fa-facebook-f fa-lg"></i></a>
+                              <a href="#!" class="text-dark"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                              <a href="#!" class="text-dark"><i class="fab fa-google fa-lg"></i></a>
+                          </div> -->
+
+                            <div class="mt-1 pt-1">
+                                <p class="mb-0 float-start">Don't have an account? <a routerLink="/auth/" class="color-Orange fw-bold">Login</a></p>
+                            </div>
+                        </form>
+                        <!-- <ul class="login-menu">
+
+                          <li class="blue-login"><a routerLink="./register">Registration</a></li>
+                      </ul> -->
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <!-- {{basicInfoRegForm.value | json}} -->
+        </div>
+    </div>
+</div>
